@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.prototipos.consumidor"},{"l":"com.prototipos.main"},{"l":"main.java.classes"},{"l":"main.java.prototipos"},{"l":"main.java.prototipos.main"},{"l":"main.java.sources"},{"l":"test"}]
