@@ -1,0 +1,10 @@
+Codigo: 1
+Referencia: Blusa Floral
+Descricao: Camisa floral de tamanho grande
+Imagem: 202105271148.png
+Fornecedor: Dafitti Comerce
+Marca: Polo
+Observacao: Apenas 14 unidades disponiveis
+Preco: 56.0
+
+
