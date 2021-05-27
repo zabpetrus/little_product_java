@@ -15,10 +15,10 @@ public class Abrir {
 
     private static final String path = "src/main/java/contents/scripts/";
     private static final LinkedHashSet<Produto> texto = new LinkedHashSet<>();
-    private static final String nomearquivo = "produtos.txt";
+    private static String nomearquivo = "produtos.txt";
     protected Produto produto = new Produto();
 
-    //
+
     public Abrir() {
 
         try{
@@ -100,11 +100,23 @@ public class Abrir {
         }
     }
 
+    public static void setNomearquivo(String nomearquivo) {
+        Abrir.nomearquivo = nomearquivo;
+    }
+
     /***************************************************************
      * @return "Um LinkedHashSet de Produtos que contém todos os produtos "
      * @see "LinkedHashSet de Produtos"
      **************************************************************/
-    public LinkedHashSet<Produto> getListaProdutos() {
+    public static LinkedHashSet<Produto> getListaProdutos() {
         return texto;
+    }
+
+    /***************************************************************
+     * Exibe a lista de produtos obtidos pela abertura do arquivo
+     * @see "Lista de arquivos"
+     **************************************************************/
+    public void exibirProdutos(){
+        texto.forEach(System.out::println); //Methhod reference
     }
 }

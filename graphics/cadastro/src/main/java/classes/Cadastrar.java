@@ -23,13 +23,10 @@ public class Cadastrar {
 
     public Cadastrar ( String codigo, String referencia, String descricao, String imagem, String fornecedor, String marca, String observacao, String preco_venda) {
 
-        try{
-            ev_codigo = Integer.parseInt(codigo);
-
+        try{ ev_codigo = Integer.parseInt(codigo);
         }catch  (Exception err){ error = error + "Codigo invalido.\n"; }
 
-        try{
-            ev_preco =  Double.parseDouble(preco_venda);
+        try{  ev_preco =  Double.parseDouble(preco_venda);
         }catch  (Exception err){ error = error + "Preco invalido.\n"; }
 
         if(referencia.isBlank()){
@@ -80,6 +77,7 @@ public class Cadastrar {
      **************************************************************/
     public void novoProduto(){
 
+        //Failure é uma chave que verifica se tudo está ok.
         if(!failure){
             this.produto.setCodigo(ev_codigo);
             this.produto.setReferencia(cad_referencia);
@@ -89,7 +87,7 @@ public class Cadastrar {
             this.produto.setMarca(cad_marca);
             this.produto.setObservacao(cad_observacao);
             this.produto.setPreco_venda(ev_preco);
-            //System.out.println(this.produto);
+
             exibirProdutos(produto);
             Salvar.salvarProduto(produto);
         }
@@ -100,21 +98,25 @@ public class Cadastrar {
     }
 
     /***************************************************************
-     * Exibe uma lista de produtos recebidos por arguementos
+     * Exibe uma lista de produtos recebidos por argumentos
      * @param data - Uma lista de produtos
      * @see "LinkedHashSet de Produtos"
      **************************************************************/
     public void exibirProdutos( Produto... data ) {
-        for(Produto produto : data ){
-            System.out.println(produto.getCodigo());
-            System.out.println(produto.getDescricao());
-            System.out.println(produto.getReferencia());
-            System.out.println(produto.getFornecedor());
-            System.out.println(produto.getImagem());
-            System.out.println(produto.getMarca());
-            System.out.println(produto.getObservacao());
-            System.out.println(produto.getPreco_venda());
+
+        if(data != null){
+            for(Produto produto : data ){
+                System.out.println(produto.getCodigo());
+                System.out.println(produto.getDescricao());
+                System.out.println(produto.getReferencia());
+                System.out.println(produto.getFornecedor());
+                System.out.println(produto.getImagem());
+                System.out.println(produto.getMarca());
+                System.out.println(produto.getObservacao());
+                System.out.println(produto.getPreco_venda());
+            }
         }
+
     }
 
 

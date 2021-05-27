@@ -8,3 +8,23 @@ Observacao: Apenas 14 unidades disponiveis
 Preco: 56.0
 
 
+Codigo: 2
+Referencia: Meias Jumbo
+Descricao: Meias de enfeite para o Natal
+Imagem: 202105271311.png
+Fornecedor: Lãs Malta
+Marca: Polo
+Observacao: Deverão ser vendidas em Novembro/Dezembro
+Preco: 10.99
+
+
+Codigo: 3
+Referencia: Roupa de Banho
+Descricao: Roupa de Banho Akarepa
+Imagem: 202105271633.png
+Fornecedor: Gustav Confecções
+Marca: Havaianas
+Observacao: Poucas Unidades
+Preco: 56.0
+
+

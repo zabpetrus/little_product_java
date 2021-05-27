@@ -4,9 +4,9 @@ package main.java.classes;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
+import java.awt.event.*;
 import java.util.LinkedHashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -106,7 +106,7 @@ public class Principal extends Extensao {
 
         lbl_image_pane.setBackground(new Color(51, 51, 51));
         js_image_pane.add(lbl_image_pane);
-        cb_marca.setModel(new DefaultComboBoxModel<>(comboValues()));
+
 
 
         cb_marca.setModel(new DefaultComboBoxModel<>( marcas ));
@@ -115,6 +115,37 @@ public class Principal extends Extensao {
                 txt_marca = marcas[ cb_marca.getSelectedIndex()];
             }
         });
+
+        //***********************  Ações de kexboard ************************
+        btn_mp_abrir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
+        btn_mp_sair.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
+
+
+        new Abrir();  //Abrindo o arquivo com os registros em tempo de execução
+        LinkedHashSet<Produto> temp = Abrir.getListaProdutos(); //Obtendo a lista de produtos
+        String[] columns = new String [] { "Codigo", "Referencia", "Descricao","Fornecedor", "Imagem",  "Marca", "Observação", "Preço" };
+        tableModel = new DefaultTableModel( converterDados(temp), columns);
+        jTable1.setModel(tableModel);
+        scrollpane_tabela.setViewportView(jTable1);
+         jTable1.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        jTable1.addMouseListener(new MouseAdapter() { //Evento onclick da tabela
+            public void mouseClicked( MouseEvent evt) {
+                txt_prod_info.setText("");
+                int index = jTable1.getSelectedRow();
+                TableModel model = jTable1.getModel();
+                StringBuilder linha = new StringBuilder();
+                linha.append("<html>");
+                for(int i = 0; i < 7; i++){
+                    linha.append(model.getValueAt(index, i).toString());
+                    linha.append("<br/>");
+                }
+                linha.append("</html>");
+                txt_prod_info.setText(linha.toString());
+            }
+        });
+
+
+        mp_sair.addActionListener(e -> System.exit(3));
 
 
         lbl_marca.setText("Marca");
@@ -183,105 +214,101 @@ public class Principal extends Extensao {
                                 .addContainerGap())
         );
         aba_cadastroLayout.setVerticalGroup(
-                aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(aba_cadastroLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(aba_cadastroLayout.createSequentialGroup()
-                                                .addComponent(js_image_pane, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(js_image_pane, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btn_image))
                                         .addGroup(aba_cadastroLayout.createSequentialGroup()
-                                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(lbl_codigo)
                                                         .addComponent(lbl_referencia))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(txt_codigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(txt_referencia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(txt_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(txt_referencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(lbl_descricao)
                                                 .addGap(3, 3, 3)
-                                                .addComponent(txt_descricao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txt_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(lbl_fornecedor)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txt_fornecedor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txt_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(lbl_preco)
                                                         .addComponent(lbl_marca))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(txt_preco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(cb_marca, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(txt_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                                                 .addComponent(lbl_observacoes)
-                                                .addGap(3, 3, 3)
-                                                .addComponent(txt_sp_observacoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, 2, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(aba_cadastroLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btn_cad_sair, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btn_reset, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btn_cadastrar, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(24, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txt_sp_observacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(11, 11, 11)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addGroup(aba_cadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btn_cad_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()) //Sem nada, fica com o minimo de espaço, 30 e  Short.MAX_VALUE ,adiciona 30 de altura na base
         );
 
         ap_registro.addTab("Cadastro", aba_cadastro);
 
-        Abrir register = new Abrir();
-        LinkedHashSet<Produto> temp = register.getListaProdutos();
-        String[] columns = new String [] { "Codigo", "Referencia", "Descricao","Fornecedor", "Imagem",  "Marca", "Observação", "Preço" };
-        tableModel = new DefaultTableModel(converterDados(temp), columns);
-        jTable1.setModel(tableModel);
-
-
-        jTable1.setColumnSelectionAllowed(true);
-        scrollpane_tabela.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         btn_lp_editar.setText("Editar");
         btn_lp_editar.setMaximumSize(new Dimension(51, 23));
         btn_lp_editar.setMinimumSize(new Dimension(51, 23));
         btn_lp_editar.addActionListener(evt -> btn_lp_editarActionPerformed());
 
+
+
         btn_lp_sair.setText("Sair");
         btn_lp_sair.addActionListener(evt -> btn_lp_sairActionPerformed());
 
         GroupLayout aba_listaLayout = new GroupLayout(aba_lista);
         aba_lista.setLayout(aba_listaLayout);
+        aba_lista.setLayout(aba_listaLayout);
+
+
         aba_listaLayout.setHorizontalGroup(
-                aba_listaLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                aba_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(aba_listaLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(aba_listaLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addGroup(aba_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(separador_lp)
-                                        .addComponent(scrollpane_tabela, GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
-                                        .addGroup(GroupLayout.Alignment.TRAILING, aba_listaLayout.createSequentialGroup()
+                                        .addComponent(scrollpane_tabela, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aba_listaLayout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(btn_lp_sair, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn_lp_editar, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(txt_prod_info, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(btn_lp_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btn_lp_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txt_prod_info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap())
         );
         aba_listaLayout.setVerticalGroup(
-                aba_listaLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                aba_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(aba_listaLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(scrollpane_tabela, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_prod_info, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(separador_lp, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(aba_listaLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btn_lp_sair, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btn_lp_editar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(scrollpane_tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_prod_info, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(separador_lp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addGroup(aba_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btn_lp_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_lp_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap())
         );
+
 
         ap_registro.addTab("Lista de Produtos", aba_lista);
 

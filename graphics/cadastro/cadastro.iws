@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd4b277c-c08d-4d53-b987-f5325504b5b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cadastro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cadastro.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grafico/cadastro/src/main/java/classes/Abrir.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../grafico/cadastro/src/main/java/classes/Abrir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/filename.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastro.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastro.iws" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Abrir.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Abrir.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Cadastrar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Cadastrar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Salvar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/classes/Salvar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/contents/scripts/filename.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/contents/scripts/produtos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/contents/scripts/produtos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/contents/scripts/produtos_original.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/prototipos/Auxiliar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/prototipos/Auxiliar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/prototipos/Teste.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro/main/java/prototipos/Teste.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro/main/java/prototipos/main/Interface_Imagem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Abrir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Abrir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Cadastrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Cadastrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Extensao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Extensao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/classes/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/classes/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/contents/scripts/filename.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/contents/scripts/produtos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/contents/scripts/produtos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/contents/scripts/produtos_original.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/produtos_original.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/prototipos/Interface_Imagem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/prototipos/main/Interface_Imagem.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,8 +78,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\aulasdio\projects\cadastro\application\graphics\cadastro\src\main\java\contents\img" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\aulasdio\projects\cadastro\application\graphics\cadastro\src\main\resources\data" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.classes.Principal" />
       <module name="cadastro" />
@@ -74,9 +96,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Reference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.prototipos.main.Reference" />
+      <module name="cadastro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.prototipos.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.Reference" />
       </list>
     </recent_temporary>
   </component>
@@ -101,5 +137,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
