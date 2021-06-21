@@ -1,30 +1,40 @@
 Codigo: 1
-Referencia: Blusa Floral
-Descricao: Camisa floral de tamanho grande
-Imagem: 202105271148.png
-Fornecedor: Dafitti Comerce
-Marca: Polo
-Observacao: Apenas 14 unidades disponiveis
-Preco: 56.0
+Referencia: Roupas de Banho
+Descricao: Roupa de Banho Felpuda
+Imagem: 202106131518.png
+Fornecedor: Joo James
+Marca: Havaianas
+Observacao: Nenhuma
+Preco: 15.0
 
 
 Codigo: 2
-Referencia: Meias Jumbo
-Descricao: Meias de enfeite para o Natal
-Imagem: 202105271311.png
-Fornecedor: Lãs Malta
-Marca: Polo
-Observacao: Deverão ser vendidas em Novembro/Dezembro
-Preco: 10.99
+Referencia: Mesa qualquer
+Descricao: Mesa de madeira qualquer 
+Imagem: 202106131925.png
+Fornecedor: Casa dos Móveis
+Marca: Lanced
+Observacao: Renderizada
+Preco: 150.0
 
 
 Codigo: 3
-Referencia: Roupa de Banho
-Descricao: Roupa de Banho Akarepa
-Imagem: 202105271633.png
-Fornecedor: Gustav Confecções
+Referencia: Teste 
+Descricao: Teste
+Imagem: 202106200135.png
+Fornecedor: Teste
 Marca: Havaianas
-Observacao: Poucas Unidades
+Observacao: Mais um teste
 Preco: 56.0
+
+
+Codigo: 4
+Referencia: Produto 
+Descricao: Mais um produto
+Imagem: 202106201029.png
+Fornecedor: Desconhecido
+Marca: Lanced
+Observacao: Mais um teste
+Preco: 98.0
 
 

@@ -107,8 +107,7 @@ public class Principal extends Extensao {
         lbl_image_pane.setBackground(new Color(51, 51, 51));
         js_image_pane.add(lbl_image_pane);
 
-
-
+        //Combobox para variavel  txtmarca;
         cb_marca.setModel(new DefaultComboBoxModel<>( marcas ));
         cb_marca.addItemListener(e -> {
             if(e.getStateChange() == ItemEvent.SELECTED ){
@@ -121,8 +120,9 @@ public class Principal extends Extensao {
         btn_mp_sair.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
 
 
+        //Classe Abrir
         new Abrir();  //Abrindo o arquivo com os registros em tempo de execução
-        LinkedHashSet<Produto> temp = Abrir.getListaProdutos(); //Obtendo a lista de produtos
+        LinkedHashSet<Produto> temp = Abrir.getListaProdutos(); //Obtendo a lista de produtos para a tabela
         String[] columns = new String [] { "Codigo", "Referencia", "Descricao","Fornecedor", "Imagem",  "Marca", "Observação", "Preço" };
         tableModel = new DefaultTableModel( converterDados(temp), columns);
         jTable1.setModel(tableModel);
@@ -161,6 +161,7 @@ public class Principal extends Extensao {
         btn_cad_sair.addActionListener(evt -> btn_cad_sairActionPerformed());
 
 
+       /*  Layout  */
         GroupLayout aba_cadastroLayout = new GroupLayout(aba_cadastro);
         aba_cadastro.setLayout(aba_cadastroLayout);
         aba_cadastroLayout.setHorizontalGroup(
@@ -329,7 +330,7 @@ public class Principal extends Extensao {
         setJMenuBar(menu_principal);
 
         pack();
-    }// </editor-fold>
+    }
 
     private void btn_lp_editarActionPerformed() {
         // TODO add your handling code here:

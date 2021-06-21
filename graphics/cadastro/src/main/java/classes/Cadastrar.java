@@ -48,6 +48,8 @@ public class Cadastrar {
             error = error + "Marca invalida\n";
         }
 
+
+
         try{
             if(observacao.isBlank()){
                 error = error + "O campo de Observações está vazio. Custa colocar alguma coisa aqui?\n";
@@ -118,7 +120,5 @@ public class Cadastrar {
         }
 
     }
-
-
 }
 

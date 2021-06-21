@@ -107,20 +107,14 @@ public class Produto implements Comparable<Produto> {
 
     @Override
     public int compareTo(Produto produto) {
-        try {
-            if ((this.getCodigo() == produto.getCodigo()) &&
-                    (this.getDescricao().equals(produto.getDescricao())) &&
-                    (this.getReferencia().equals(produto.getReferencia())) &&
-                    (this.getObservacao().equals(produto.getObservacao())) &&
-                    (this.getMarca().equals(produto.getMarca())) &&
-                    (this.getImagem().equals(produto.getImagem())) &&
-                    (this.getPreco_venda() == produto.getPreco_venda())) {
-                return 1;
-            }
-
-        } catch (Exception e) {
-            return 0;
+        if (this.getCodigo() > produto.getCodigo()){
+            return 1;
         }
-        return -1;
+        if (this.getCodigo() < produto.getCodigo()){
+            return -1;
+        }
+        return 0;
     }
+
+
 }

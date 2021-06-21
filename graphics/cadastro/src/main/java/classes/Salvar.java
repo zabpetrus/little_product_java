@@ -33,6 +33,7 @@ public class Salvar {
         Abrir foo = new Abrir();
         LinkedHashSet<Produto> aux = foo.getListaProdutos();
 
+
         for(Produto temp2 : aux ){
             if(temp2 != null){
                 if(temp2.compareTo(produto) > 0){

@@ -100,6 +100,7 @@ public class Abrir {
         }
     }
 
+    //Exibe o nome do arquivo
     public static void setNomearquivo(String nomearquivo) {
         Abrir.nomearquivo = nomearquivo;
     }
@@ -119,4 +120,10 @@ public class Abrir {
     public void exibirProdutos(){
         texto.forEach(System.out::println); //Methhod reference
     }
+
+    //Comparable
+    public static int compareTo(Produto a, Produto b) {
+        return a.compareTo(b);
+    }
+
 }
