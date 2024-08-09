@@ -1,0 +1,36 @@
+Codigo: 1
+Referencia: Caneca Preta
+Descricao: Caneca de Suporte retangular
+Imagem: produto.png
+Fornecedor: Lojas Macarroe Ltda
+Marca: Zugan
+Observacao: Peças adquiridas pelo preço de banana
+Preco: 500.00
+
+Codigo: 2
+Referencia: Blusa Azul
+Descricao: Camiseta Azul com mangas
+Imagem: produto.png
+Fornecedor: Lojas Mellorine
+Marca: Sanji
+Observacao: Teste de Roupa
+Preco: 200.00
+
+Codigo: 3
+Referencia: Bermudas e Havaianas
+Descricao: Bermuda floral com bolinhas
+Imagem: imagem.png
+Fornecedor: Malwee LTDA
+Marca: Foww
+Observacao: Não quero ser incomodada
+Preco: 600.0
+
+Codigo: 4
+Referencia: Saia floral
+Descricao: Saia floral e listrada
+Imagem: imagem2.png
+Fornecedor: Solo Levelling LTDA
+Marca: Soo Wong
+Observacao: Mais uma tentativa
+Preco: 200.0
+

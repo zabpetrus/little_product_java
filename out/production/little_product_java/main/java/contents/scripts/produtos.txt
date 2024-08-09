@@ -1,0 +1,40 @@
+Codigo: 1
+Referencia: Roupas de Banho
+Descricao: Roupa de Banho Felpuda
+Imagem: 202106131518.png
+Fornecedor: Joo James
+Marca: Havaianas
+Observacao: Nenhuma
+Preco: 15.0
+
+
+Codigo: 2
+Referencia: Mesa qualquer
+Descricao: Mesa de madeira qualquer 
+Imagem: 202106131925.png
+Fornecedor: Casa dos Móveis
+Marca: Lanced
+Observacao: Renderizada
+Preco: 150.0
+
+
+Codigo: 3
+Referencia: Teste 
+Descricao: Teste
+Imagem: 202106200135.png
+Fornecedor: Teste
+Marca: Havaianas
+Observacao: Mais um teste
+Preco: 56.0
+
+
+Codigo: 4
+Referencia: Produto 
+Descricao: Mais um produto
+Imagem: 202106201029.png
+Fornecedor: Desconhecido
+Marca: Lanced
+Observacao: Mais um teste
+Preco: 98.0
+
+

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="documentation1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/graphics/cadastro/out/production/cadastro/main/resources/documentation/member-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/graphics/cadastro/out/production/cadastro/main/resources/documentation/package-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/graphics/cadastro/out/production/cadastro/main/resources/documentation/type-search-index.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
